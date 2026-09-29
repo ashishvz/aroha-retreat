@@ -1,0 +1,121 @@
+.page {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 2rem clamp(1rem, 4vw, 3rem) 4rem;
+}
+
+.login {
+  max-width: 420px;
+  margin: 12vh auto 0;
+  grid-template-columns: 1fr;
+}
+.login h1 {
+  font-size: 1.8rem;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1.4rem;
+  margin-bottom: 1.2rem;
+}
+.head h1 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+.head > span {
+  color: var(--bronze);
+}
+.toggle {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-left: auto;
+}
+
+.error {
+  color: #9b2c1c;
+}
+
+.wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  background: var(--ivory);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.table th,
+.table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--line);
+}
+.table th {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 400;
+}
+.table tr[data-status="cancelled"] {
+  opacity: 0.5;
+}
+.nowrap {
+  white-space: nowrap;
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  background: var(--sand);
+}
+.badge[data-status="pending"] {
+  background: #f3e2c2;
+  color: var(--bronze);
+}
+.badge[data-status="confirmed"] {
+  background: #e3ecd4;
+  color: var(--forest);
+}
+.badge[data-status="blocked"] {
+  background: var(--forest-deep);
+  color: var(--ivory);
+}
+
+.ok,
+.cancel {
+  font: inherit;
+  font-size: 0.82rem;
+  padding: 0.35rem 0.7rem;
+  margin-right: 0.3rem;
+  border: 1px solid var(--forest);
+  cursor: pointer;
+}
+.ok {
+  background: var(--forest);
+  color: var(--ivory);
+}
+.cancel {
+  background: transparent;
+  color: var(--forest);
+}
+
+.block {
+  margin-top: 2.5rem;
+  max-width: 640px;
+}
+.block h2 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+.hint {
+  margin: -0.8rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}

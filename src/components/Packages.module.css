@@ -1,0 +1,144 @@
+.section {
+  background: var(--bone);
+}
+
+.head {
+  max-width: 640px;
+  margin-bottom: clamp(2.8rem, 6vw, 4.5rem);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.6rem, 3.5vw, 3rem);
+  align-items: stretch;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--ivory);
+  border: 1px solid var(--line);
+  padding: clamp(1.1rem, 2vw, 1.4rem);
+  transition: border-color 0.5s var(--ease), transform 0.6s var(--ease);
+}
+.card:hover {
+  border-color: rgba(38, 72, 28, 0.42);
+  transform: translateY(-5px);
+}
+
+.featured {
+  border-color: var(--forest);
+}
+
+.frame {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1.6rem;
+}
+.frame img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 1.3s var(--ease);
+}
+.card:hover .frame img {
+  transform: scale(1.05);
+}
+
+.badge {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: var(--forest);
+  color: var(--ivory);
+  font-size: 0.6rem;
+  font-weight: 300;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  padding: 0.55rem 1rem;
+}
+
+.duration {
+  margin: 0 0 0.4rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--bronze);
+}
+
+.name {
+  font-size: clamp(1.5rem, 2.4vw, 1.95rem);
+  margin: 0 0 0.7rem;
+  min-height: 2.1em; /* keeps the three cards' body copy on one baseline */
+}
+
+.blurb {
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+  font-size: 0.94rem;
+  flex: 1;
+}
+
+.specs {
+  list-style: none;
+  margin: 0 0 1.6rem;
+  padding: 1.3rem 0 0;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 0.7rem;
+}
+.specs li {
+  position: relative;
+  padding-left: 1.4rem;
+  font-size: 0.87rem;
+  color: var(--ink);
+}
+.specs li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--leaf);
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding-top: 1.3rem;
+  margin-bottom: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+.from {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.amount {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--forest-deep);
+}
+.unit {
+  font-size: 0.78rem;
+  color: var(--muted);
+  width: 100%;
+}
+
+@media (max-width: 940px) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 460px;
+  }
+  .name {
+    min-height: 0;
+  }
+}

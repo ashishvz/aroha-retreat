@@ -1,0 +1,208 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: background 0.5s var(--ease), box-shadow 0.5s var(--ease);
+}
+.solid {
+  background: rgba(250, 247, 239, 0.95);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 var(--line);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  height: 92px;
+  transition: height 0.5s var(--ease);
+}
+.solid .inner {
+  height: 76px;
+}
+
+/* --------------------------------------------------------------- the brand */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.mark {
+  height: 40px;
+  width: auto;
+  transition: filter 0.5s var(--ease), height 0.5s var(--ease);
+}
+.word {
+  height: 26px;
+  width: auto;
+  transition: filter 0.5s var(--ease);
+}
+/* over the hero photo the deep-green logo needs to read as ivory */
+.nav:not(.solid) .mark,
+.nav:not(.solid) .word {
+  filter: brightness(0) invert(1) drop-shadow(0 2px 10px rgba(0, 0, 0, 0.35));
+}
+.solid .mark {
+  height: 34px;
+}
+
+/* --------------------------------------------------------------- the links */
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 2.1rem;
+}
+
+.links a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.45);
+  transition: color 0.35s var(--ease), opacity 0.35s var(--ease);
+}
+.solid .links a {
+  color: var(--ink);
+  text-shadow: none;
+}
+
+/* hairline that draws in on hover */
+.links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -7px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.75;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s var(--ease);
+}
+.links a:hover::after {
+  transform: scaleX(1);
+}
+
+.cta {
+  padding: 0.72rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+}
+.cta::after {
+  display: none;
+}
+.cta:hover {
+  background: var(--ivory);
+  color: var(--forest-deep) !important;
+  border-color: var(--ivory);
+}
+.solid .cta {
+  border-color: var(--line);
+}
+.solid .cta:hover {
+  background: var(--forest);
+  color: var(--ivory) !important;
+  border-color: var(--forest);
+}
+
+/* ----------------------------------------------------------------- burger */
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  z-index: 60;
+}
+.burger span {
+  display: block;
+  width: 26px;
+  height: 1px;
+  margin-left: auto;
+  background: #fff;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+  transition: transform 0.45s var(--ease), opacity 0.3s var(--ease),
+    background 0.35s var(--ease), width 0.35s var(--ease);
+}
+.burger span:last-child {
+  width: 18px;
+}
+.solid .burger span {
+  background: var(--forest-deep);
+  box-shadow: none;
+}
+.burgerOpen span:first-child {
+  transform: translateY(4px) rotate(45deg);
+}
+.burgerOpen span:last-child {
+  width: 26px;
+  transform: translateY(-4px) rotate(-45deg);
+}
+.burgerOpen span,
+.solid .burgerOpen span {
+  background: var(--ivory);
+  box-shadow: none;
+}
+
+@media (max-width: 1040px) {
+  .burger {
+    display: flex;
+  }
+  .links {
+    position: fixed;
+    inset: 0 0 0 auto;
+    width: min(84vw, 380px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.9rem;
+    padding: 2rem clamp(1.8rem, 7vw, 3rem);
+    background: var(--forest-deep);
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform 0.55s var(--ease), visibility 0.55s var(--ease);
+  }
+  .linksOpen {
+    transform: translateX(0);
+    visibility: visible;
+  }
+  .links a,
+  .solid .links a {
+    color: var(--ivory);
+    font-size: 0.85rem;
+    letter-spacing: 0.22em;
+    text-shadow: none;
+  }
+  .cta,
+  .solid .cta {
+    margin-top: 0.6rem;
+    border-color: rgba(250, 247, 239, 0.4);
+  }
+  .cta:hover,
+  .solid .cta:hover {
+    background: var(--ivory);
+    color: var(--forest-deep) !important;
+    border-color: var(--ivory);
+  }
+  .inner,
+  .solid .inner {
+    height: 76px;
+  }
+}
