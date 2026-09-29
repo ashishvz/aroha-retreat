@@ -1,0 +1,6 @@
+{
+  "_comment": "PLACEHOLDER counts — replace with the owner's real rooms. Key = room type (matches `type` in src/config.ts cottages), value = room names. Never rename a room that has bookings.",
+  "aframe": ["A-Frame 1", "A-Frame 2", "A-Frame 3"],
+  "verandah": ["Verandah"],
+  "garden": ["Garden 1", "Garden 2", "Garden 3"]
+}

@@ -1,0 +1,182 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 8rem 0 7rem;
+  overflow: hidden;
+}
+
+.photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 62% center;
+  max-width: none;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(9, 24, 13, 0.5) 0,
+      rgba(9, 24, 13, 0.1) 200px,
+      rgba(9, 24, 13, 0.06) 58%,
+      rgba(9, 24, 13, 0.55) 100%
+    ),
+    radial-gradient(
+      62% 50% at 50% 44%,
+      rgba(9, 24, 13, 0.34) 0%,
+      rgba(9, 24, 13, 0.08) 64%,
+      transparent 86%
+    );
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+}
+
+.mark {
+  width: clamp(96px, 13vw, 152px);
+  height: auto;
+  margin-bottom: clamp(1.4rem, 3vw, 2.2rem);
+  /* the mark is deep green — knock it to ivory over the photo */
+  filter: brightness(0) invert(1) drop-shadow(0 4px 22px rgba(0, 0, 0, 0.4));
+  opacity: 0.96;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1em;
+  margin: 0;
+  color: #fff;
+  text-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+.kannada {
+  font-family: var(--font-kannada);
+  font-size: clamp(1.15rem, 2.6vw, 1.6rem);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 0.35em;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: clamp(3.4rem, 11vw, 7.5rem);
+  font-weight: 300;
+  line-height: 0.94;
+  letter-spacing: 0.02em;
+}
+
+.sub {
+  font-family: var(--font-body);
+  font-size: clamp(0.72rem, 1.9vw, 0.95rem);
+  font-weight: 300;
+  letter-spacing: 0.62em;
+  text-transform: uppercase;
+  text-indent: 0.62em; /* balance the trailing letter-space */
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hair {
+  width: 1px;
+  height: clamp(2rem, 5vw, 3.2rem);
+  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+  margin: clamp(1.6rem, 4vw, 2.4rem) 0 clamp(1.2rem, 3vw, 1.8rem);
+}
+
+.tagline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  margin: 0 0 1.5rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  font-weight: 300;
+  color: #fff;
+  /* sits over the sun's glare, so it needs a real shadow to hold */
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6), 0 2px 40px rgba(0, 0, 0, 0.5);
+}
+
+.tagKannada {
+  font-family: var(--font-kannada);
+  font-style: normal;
+  font-size: 0.62em;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.pillars {
+  margin: 0;
+  font-size: clamp(0.62rem, 1.6vw, 0.72rem);
+  font-weight: 300;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.88);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------------------------------------------------------------- scroll cue */
+
+.scroll {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(1.6rem, 4vh, 2.6rem);
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 30px;
+  height: 46px;
+  display: grid;
+  place-items: start center;
+}
+.scroll span {
+  width: 1px;
+  height: 34px;
+  background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+  animation: drift 2.4s var(--ease) infinite;
+  transform-origin: top;
+}
+@keyframes drift {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll span {
+    animation: none;
+    opacity: 0.8;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    padding: 7rem 0 6rem;
+  }
+  .scroll {
+    display: none;
+  }
+}

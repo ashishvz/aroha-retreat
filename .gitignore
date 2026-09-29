@@ -1,0 +1,18 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+.vite
+data
+__pycache__
+
+# graft's local graph cache — regenerable, not committed (run `graft build`).
+/graft/
+.env
+.backup
+.claude
+graft
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts

@@ -1,0 +1,139 @@
+.cal {
+  border: 1px solid var(--line);
+  padding: 1rem;
+  background: var(--bone);
+}
+
+.calHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--forest-deep);
+}
+.calHead strong {
+  font-weight: 400;
+}
+.calHead button {
+  font: inherit;
+  font-size: 1.5rem;
+  line-height: 1;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid var(--line);
+  background: var(--ivory);
+  color: var(--forest);
+  cursor: pointer;
+}
+.calHead button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.wd {
+  text-align: center;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+}
+
+.day {
+  font: inherit;
+  font-size: 0.9rem;
+  aspect-ratio: 1;
+  min-height: 2.2rem;
+  border: 1px solid transparent;
+  background: var(--ivory);
+  color: var(--ink);
+  cursor: pointer;
+  padding: 0;
+}
+.day[data-state="free"] {
+  background: #e3ecd4;
+}
+.day[data-state="few"] {
+  background: #f3e2c2;
+}
+.day[data-state="full"] {
+  background: var(--sand);
+  color: var(--muted);
+  text-decoration: line-through;
+}
+.day[data-state="out"] {
+  background: transparent;
+  color: rgba(111, 119, 104, 0.4);
+}
+.day:disabled {
+  cursor: default;
+}
+.day[data-range] {
+  outline: 2px solid var(--leaf);
+  outline-offset: -2px;
+}
+.day[data-selected] {
+  background: var(--forest);
+  color: var(--ivory);
+  text-decoration: none;
+}
+.day:focus-visible {
+  outline: 2px solid var(--bronze);
+  outline-offset: 1px;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  margin-top: 0.8rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.legend span::before {
+  content: "";
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  margin-right: 0.4em;
+  vertical-align: -0.05em;
+}
+.legend [data-state="free"]::before {
+  background: #e3ecd4;
+}
+.legend [data-state="few"]::before {
+  background: #f3e2c2;
+}
+.legend [data-state="full"]::before {
+  background: var(--sand);
+}
+.legend em {
+  flex-basis: 100%;
+  color: var(--bronze);
+}
+
+.status {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--forest);
+}
+.status[data-state="full"] {
+  color: var(--bronze);
+}
+
+.fine {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.doneTitle {
+  font-size: 2rem;
+}
