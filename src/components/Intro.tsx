@@ -11,7 +11,7 @@ const pillars = [
   {
     n: "02",
     title: "Meditation",
-    body: "A dedicated hall, guided sits morning and evening and silence on the mountain at dawn.",
+    body: "A dedicated hall, guided sits each morning and evening, and a silent sunrise on the mountain.",
   },
   {
     n: "03",

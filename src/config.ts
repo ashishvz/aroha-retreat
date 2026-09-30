@@ -62,8 +62,8 @@ export const packages: Package[] = [
     from: "₹3,500",
     fromUnit: "per person, per night",
     blurb:
-      "A private room, every meal from the farm and a campfire under an open sky. Let the morning\u2019s melody be your alarm.",
-    specs: ["Private room", "All meals included", "Campfire included"],
+      "A private room, the pool to yourself, every meal from the farm and a campfire under an open sky. Let the morning\u2019s melody be your alarm.",
+    specs: ["Private room", "Swimming pool", "All meals included"],
     image: "/pkg-farm.webp",
     featured: true,
   },
@@ -74,8 +74,8 @@ export const packages: Package[] = [
     from: "₹4,500",
     fromUnit: "per person, per night",
     blurb:
-      "Everything in the farm stay, plus full pool and meditation hall access, guided sessions and a quiet sit on the mountain as dawn breaks.",
-    specs: ["Pool & meditation hall access", "Guided meditation", "Sunrise mountain meditation"],
+      "Everything in the farm stay, plus meditation hall access, guided sits morning and evening, and a quiet sit on the mountain as dawn breaks.",
+    specs: ["Meditation hall access", "Guided meditation", "Sunrise mountain meditation"],
     image: "/pkg-retreat.webp",
   },
 ];
@@ -96,7 +96,7 @@ export const inclusions: InclusionRow[] = [
   { label: "Duration", day: "Day use", farm: "2D / 1N", retreat: "2D / 1N" },
   { label: "Private room", day: "no", farm: "yes", retreat: "yes" },
   { label: "Meditation hall", day: "no", farm: "no", retreat: "yes" },
-  { label: "Swimming pool", day: "yes", farm: "Optional / extra", retreat: "yes" },
+  { label: "Swimming pool", day: "yes", farm: "yes", retreat: "yes" },
   { label: "Breakfast", day: "no", farm: "yes", retreat: "yes" },
   { label: "Lunch", day: "yes", farm: "yes", retreat: "yes" },
   { label: "Evening High Tea & snacks", day: "yes", farm: "yes", retreat: "yes" },
@@ -106,7 +106,7 @@ export const inclusions: InclusionRow[] = [
   { label: "Ox & sheep experience", day: "yes", farm: "yes", retreat: "yes" },
   { label: "Mountain visit", day: "no", farm: "Optional / extra", retreat: "yes" },
   { label: "Mountain meditation", day: "no", farm: "no", retreat: "yes" },
-  { label: "Campfire", day: "Optional / extra", farm: "yes", retreat: "yes" },
+  { label: "Campfire", day: "no", farm: "yes", retreat: "yes" },
   { label: "Farm hosts / assistance", day: "yes", farm: "yes", retreat: "yes" },
   { label: "Meals from organic, farm-grown produce", day: "yes", farm: "yes", retreat: "yes" },
   { label: "Housekeeping", day: "Basic", farm: "yes", retreat: "yes" },
@@ -193,8 +193,7 @@ export const experiences: Experience[] = [
   },
   {
     title: "Swimming pool",
-    blurb:
-      "Included with your Day Visit or Retreat package, and available on request for Farm Stay guests.",
+    blurb: "Included with every package — swim any time, day or night.",
   },
   {
     title: "Campfire evenings",
